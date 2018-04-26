@@ -1,0 +1,28 @@
+﻿<Window x:Class="Course_kepeer_1.main_user_window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Course_kepeer_1"
+        mc:Ignorable="d"
+        x:Name="main_user"
+        Title="main_user_window" Height="600" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Width="60">
+            <Menu >
+                <MenuItem  Header="     My &#xa;Password" Click="MenuItem_Click_2" Margin="0,20,0,20"  >
+                    
+                </MenuItem>
+                <MenuItem Header="New" Margin="11,20,0,20" Click="MenuItem_Click"  HorizontalAlignment="Center"/>
+                <MenuItem Header="Help" Margin="11,20,0,20"/>
+                <MenuItem Header="Setting" Margin="11,20,0,20"/>
+                
+                <MenuItem Header="Exit" Margin="11,20,0,20" Click="MenuItem_Click_1"/>
+            </Menu>
+
+        </StackPanel>
+        <Frame x:Name="User" Margin="60,35,0,0" NavigationUIVisibility="Hidden" HorizontalAlignment="Left" Width="732" />
+
+
+    </Grid>
+</Window>
