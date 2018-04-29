@@ -9,10 +9,13 @@
       Title="Edit_pass">
 
     <Grid >
-        <Button Width="30" Height="30" VerticalAlignment="Top"  HorizontalAlignment="Left" Margin="10" Click="Button_Click"/>
-        <TextBox Width="270" Name="resou"  BorderThickness="0.5" Text="456789" BorderBrush="Black" Margin="0,100,0,0" Background="Transparent" Height="35 "  VerticalAlignment="Top" FontSize="20"  TextAlignment="Center"/>
-        <TextBox Width="270" MouseDown="TextBox_MouseDown" BorderThickness="0.5" Text="" BorderBrush="Black" Margin="0,170,0,0" Background="Transparent" Height="35 "  VerticalAlignment="Top" FontSize="20"  TextAlignment="Center"/>
-        <TextBox Width="270" BorderThickness="0.5" Text="" BorderBrush="Black" Margin="0,240,0,0" Background="Transparent" Height="35 "  VerticalAlignment="Top" FontSize="20"  TextAlignment="Center"/>
+        <Button Width="30" Height="30" VerticalAlignment="Top" Name="back" HorizontalAlignment="Left" Margin="10" Click="Button_Click"/>
+        <Frame  Margin="0,70,0,0" Name="passworch">
+            
+        </Frame>
+        <Button Width="30" Height="30" VerticalAlignment="Top"  Name="edit" HorizontalAlignment="Left" Margin="110,10,0,0"  Click="edit_Click"/>
+        <Button Width="30" Height="30" VerticalAlignment="Top"   Click="delete_Click" x:Name="delete" HorizontalAlignment="Left" Margin="210,10,0,0"  RenderTransformOrigin="0.5,0.5"/>
+        
 
     </Grid>
 </Page>

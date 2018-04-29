@@ -25,18 +25,27 @@ namespace Course_kepeer_1
   
     public partial class My_password : Page
     {
+       
         First_model db = new First_model();
         
         public My_password()
         {
             InitializeComponent();
+
+            RefreshList();
+            Edit_pass.onDeleteClick += this.RefreshList;
+            
+        }
+
+        private void RefreshList()
+        {
             First_model db = new First_model();
             List<Resource_info> info = db.Resource_info.ToList();
-           
-           
+
+
             list.ItemsSource = info;
             list.DisplayMemberPath = "Resource";
-            
+
         }
 
         private void list_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -44,7 +53,7 @@ namespace Course_kepeer_1
 
            
             Resource_info info = (Resource_info)list.SelectedItem;
-            my_passframe.Content = new Edit_pass(border1);
+            my_passframe.Content = new Edit_pass(border1,info);
 
             DoubleAnimation an = new DoubleAnimation();
             an.To = 300;

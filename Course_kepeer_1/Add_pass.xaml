@@ -12,10 +12,10 @@
         <StackPanel>
             
             <!--<xctk:WatermarkTextBox Watermark="Resources" Width="340" BorderThickness="0.5" BorderBrush="Black" Margin="0,120,0,0" Background="Transparent" Height="35 "  VerticalAlignment="Top" FontSize="20"  TextAlignment="Center"/>-->
-            <xctk:WatermarkTextBox Watermark="Resources" Width="340" BorderThickness="0.5" BorderBrush="Black" Margin="0,120,0,0" Background="Transparent" Height="35 " VerticalAlignment="Top" FontSize="20"  Name="Res" TextAlignment="Center"/>
-            <xctk:WatermarkTextBox Watermark="Login" TextChanged="Log_res_TextChanged" Width="340" Name="Log_res" BorderThickness="0.5" BorderBrush="Black" Margin="0,40,0,0" Background="Transparent" Height="35 " VerticalAlignment="Top" FontSize="20"  TextAlignment="Center"/>
-            
-            <xctk:WatermarkTextBox Watermark="Password"  Width="340" BorderThickness="0.5" BorderBrush="Black" Margin="0,40,0,0" Background="Transparent" Height="35 " VerticalAlignment="Top" FontSize="20"  TextAlignment="Center" Name="password" Text=""/>
+            <xctk:WatermarkTextBox Watermark="Resources" SelectionChanged="Res_SelectionChanged" Width="340" BorderThickness="0.5" BorderBrush="Black" Margin="0,120,0,0" Background="Transparent" Height="35 " VerticalAlignment="Top" FontSize="20"  Name="Res" TextAlignment="Center"/>
+            <xctk:WatermarkTextBox Watermark="Login" SelectionChanged="Res_SelectionChanged" Width="340" Name="Log_res" BorderThickness="0.5" BorderBrush="Black" Margin="0,40,0,0" Background="Transparent" Height="35 " VerticalAlignment="Top" FontSize="20"  TextAlignment="Center"/>
+
+            <xctk:WatermarkTextBox Watermark="Password" SelectionChanged="Res_SelectionChanged"  Width="340" BorderThickness="0.5" BorderBrush="Black" Margin="0,40,0,0" Background="Transparent" Height="35 " VerticalAlignment="Top" FontSize="20"  TextAlignment="Center" Name="password" Text=""/>
             <Expander Header="Geniration">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -39,6 +39,6 @@
             </Expander>
 
         </StackPanel>
-        <Button Height="40" Width="140" Margin="0,400,0,0" Click="Button_Click" Content="Add" />
+        <Button Height="40" Width="140" Margin="0,400,0,0" Click="Button_Click" Name="add" IsEnabled="False" Content="Add" />
     </Grid>
 </Page>

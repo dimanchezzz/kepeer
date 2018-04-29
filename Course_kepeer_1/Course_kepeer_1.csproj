@@ -49,6 +49,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -99,8 +102,14 @@
     <Compile Include="Edit_pass.xaml.cs">
       <DependentUpon>Edit_pass.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ed_pass.xaml.cs">
+      <DependentUpon>ed_pass.xaml</DependentUpon>
+    </Compile>
     <Compile Include="First_model.cs" />
     <Compile Include="Hash.cs" />
+    <Compile Include="labelpass.xaml.cs">
+      <DependentUpon>labelpass.xaml</DependentUpon>
+    </Compile>
     <Compile Include="main_user_window.xaml.cs">
       <DependentUpon>main_user_window.xaml</DependentUpon>
     </Compile>
@@ -127,6 +136,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Edit_pass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ed_pass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="labelpass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

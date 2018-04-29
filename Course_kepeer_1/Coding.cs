@@ -3,36 +3,115 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+using System.Web.Script.Serialization;
 
 namespace Course_kepeer_1
 {
     class Coding
     {
-        public string GetCoding(string line)
-        {
-            string newline = "";
-            char[] chararr;
-            int a = 0;
-            chararr = line.ToCharArray();
-            for (int i = 0; i < chararr.Length; i++)
-            {
-                a = (int)chararr[i] + 1;
-                newline += (char)a;
-            }
-            return newline;
+        byte[] S = new byte[256];
+
+        int x = 0;
+        int y = 0;
+       
+        byte[] key = ASCIIEncoding.ASCII.GetBytes(main_user_window.Thisuser.Login);
+        
+        
+
+        public Coding()
+        {   
+            init(key);
         }
-        public string GetEncoding(string line)
+
+        // Key-Scheduling Algorithm 
+        // Алгоритм ключевого расписания 
+        private void init(byte[] key)
         {
-            string newline = "";
-            char[] chararr;
-            int a = 0;
-            chararr = line.ToCharArray();
-            for (int i = 0; i < chararr.Length; i++)
+            int keyLength = key.Length;
+
+            for (int i = 0; i < 256; i++)
             {
-                a = (int)chararr[i] - 1;
-                newline += (char)a;
+                S[i] = (byte)i;
             }
-            return newline;
+
+            int j = 0;
+            for (int i = 0; i < 256; i++)
+            {
+                j = (j + S[i] + key[i % keyLength]) % 256;
+                S.Swap(i, j);
+            }
+        }
+        //byte[] dataB, int size
+        public string Encode(string line)
+        {
+            JavaScriptSerializer seriallizer = new JavaScriptSerializer();
+
+            byte[] test = ASCIIEncoding.ASCII.GetBytes(line);
+            byte[] data = test.Take(test.Length).ToArray();
+
+            byte[] cipher = new byte[data.Length];
+
+            for (int m = 0; m < data.Length; m++)
+            {
+                cipher[m] = (byte)(data[m] ^ keyItem());
+            }
+            string json = seriallizer.Serialize(cipher);
+            return json;
+        }
+        public string Decode(string code)
+        {
+            JavaScriptSerializer seriallizer = new JavaScriptSerializer();
+            byte[] cipher = seriallizer.Deserialize<byte[]>(code);
+            byte[] data = cipher.Take(cipher.Length).ToArray();
+            byte[] chipher = new byte[data.Length];
+            for (int m = 0; m < data.Length; m++)
+            {
+                chipher[m] = (byte)(data[m] ^ keyItem());
+            }
+            string go;
+            go = ASCIIEncoding.ASCII.GetString(chipher);
+            return go;
+
+
+
+
+
+
+        }
+
+        // Pseudo-Random Generation Algorithm 
+        // Генератор псевдослучайной последовательности 
+        private byte keyItem()
+        {
+            x = (x + 1) % 256;
+            y = (y + S[x]) % 256;
+
+            S.Swap(x, y);
+
+            return S[(S[x] + S[y]) % 256];
         }
     }
+
+    static class SwapExt
+    {
+        public static void Swap<T>(this T[] array, int index1, int index2)
+        {
+            T temp = array[index1];
+            array[index1] = array[index2];
+            array[index2] = temp;
+        }
+
+
+    }
 }
+//byte[] key = ASCIIEncoding.ASCII.GetBytes("Key");
+
+//RC4 encoder = new RC4(key);
+//string testString = "Plaintext";
+//byte[] testBytes = ASCIIEncoding.ASCII.GetBytes(testString);
+//byte[] result = encoder.Encode(testBytes, testBytes.Length);
+
+//RC4 decoder = new RC4(key);
+//byte[] decryptedBytes = decoder.Decode(result, result.Length);
+//string decryptedString = ASCIIEncoding.ASCII.GetString(decryptedBytes);

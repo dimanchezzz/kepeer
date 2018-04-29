@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Security.Cryptography;
 
 namespace Course_kepeer_1
 {
@@ -19,7 +20,10 @@ namespace Course_kepeer_1
     /// </summary>
     public partial class main_user_window : Window
     {
+      
         private static User_info thisuser;
+        
+      //  private static byte[] keys=ASCIIEncoding.ASCII.GetBytes(Thisuser.Login.ToString());
         public main_user_window(User_info user)
         {
             InitializeComponent();
@@ -38,6 +42,8 @@ namespace Course_kepeer_1
                 thisuser = value;
             }
         }
+
+      
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

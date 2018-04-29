@@ -20,15 +20,19 @@ namespace Course_kepeer_1
     /// Логика взаимодействия для Add_pass.xaml
     /// </summary>
     public partial class Add_pass : Page
-    {
+    { 
         public Add_pass()
         {
             InitializeComponent();
+            onEnable += Isena;
+            
+           
+
+           
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            // ((Slider)sender).SelectionEnd = e.NewValue;
             string dic = "";
             string tmp = "";
             if(AZ.IsChecked==true)
@@ -66,16 +70,19 @@ namespace Course_kepeer_1
             }
             password.Text = pass;
         }
+     
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Coding cod = new Coding();
             using (First_model db = new First_model())
             {
                 Resource_info rs = new Resource_info
-                {
-                    Resource = Res.Text,
+                {  
+                    
+                    Resource =Res.Text,
                     Login_resource = Log_res.Text,
-                    Password_resource = password.Text,
+                    Password_resource = cod.Encode(password.Text),
                     User = main_user_window.Thisuser.Login,
                     User_id=main_user_window.Thisuser.Id
                     
@@ -85,20 +92,40 @@ namespace Course_kepeer_1
                 db.Resource_info.Add(rs);
                 db.SaveChanges();
                 MessageBox.Show("ok");
+                Res.Clear();
+                Log_res.Clear();
+                password.Clear();
                 
 
             }
 
         }
 
-        private void Log_res_TextChanged(object sender, TextChangedEventArgs e)
+        public void Isena()
         {
-             if ( String.IsNullOrEmpty(Log_res.Text))
+            if(Log_res.Text=="" || Res.Text=="" ||password.Text=="")
+
             {
-                
+                add.IsEnabled = false;
+
             }
+            else
+            {
+                add.IsEnabled = true;
+            }
+        }
+        public delegate void MethodContainer();
+        public static event MethodContainer onEnable;
+
+       
+
+        private void Res_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            onEnable();
 
         }
+
+       
     }
 }
 

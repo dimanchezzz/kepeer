@@ -23,13 +23,19 @@ namespace Course_kepeer_1
     public partial class Edit_pass : Page
     {
         Border Bord;
-        public Edit_pass(Border bord)
+        Resource_info Info;
+        
+        public Edit_pass(Border bord,Resource_info info)
         {
             InitializeComponent();
             Bord = bord;
-        }
+            Info = info;
+            passworch.Content = new labelpass(Info,Bord);
+            isEnab += Isenab;
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+           
+        }
+        public void Anim()
         {
             DoubleAnimation an = new DoubleAnimation();
             an.To = 0;
@@ -37,9 +43,48 @@ namespace Course_kepeer_1
             Bord.BeginAnimation(Border.WidthProperty, an);
         }
 
-        private void TextBox_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(resou.Text);
+            Anim();
+        }
+
+        private void edit_Click(object sender, RoutedEventArgs e)
+        {
+            passworch.Content = new ed_pass(Info);
+        }
+
+        public delegate void MethodContainer();
+        public static event MethodContainer onDeleteClick;
+        public static event MethodContainer isEnab;
+         public void Isenab()
+        { if (Info==null)
+            {
+                delete.IsEnabled = false;
+                edit.IsEnabled = false;
+
+            }
+            
+
+        }
+
+        private void delete_Click(object sender, RoutedEventArgs e)
+        {
+            using (First_model db = new First_model())
+            {
+                IEnumerable<Resource_info> res = db.Resource_info.Where(u => u.Id.Equals(Info.Id));
+                Resource_info reso = res.First();
+               // db.Resource_info.
+                db.Resource_info.RemoveRange(res);
+                db.SaveChanges();
+                //My_password ms = new My_password();
+                onDeleteClick();
+                isEnab();
+
+                //List<Resource_info> info = db.Resource_info.ToList();
+                //ms.list.ItemsSource = info;
+                //ms.list.DisplayMemberPath = "Resource";
+                return;
+            }
 
         }
     }

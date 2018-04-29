@@ -28,6 +28,9 @@ namespace Course_kepeer_1
             DataContext = this;
            
         }
+        public delegate void CheckForm();
+        public static event CheckForm OnEnable;
+
 
         private void Click_agreement(object sender, MouseButtonEventArgs e)
         {
@@ -53,10 +56,12 @@ namespace Course_kepeer_1
             if (Validation.GetHasError(log) == true || Validation.GetHasError(pw1) || Validation.GetHasError(pw2) || Validation.GetHasError(qu) || Validation.GetHasError(ans))
             {
                 MessageBox.Show("Incorrectly filled data!");
+                return;
             }
             else if (pw1.Password!=pw2.Password)
             {
                 MessageBox.Show("Passwords do not match!");
+                return;
             }
 
 

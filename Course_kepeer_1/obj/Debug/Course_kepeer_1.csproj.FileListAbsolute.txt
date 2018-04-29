@@ -47,3 +47,7 @@ D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\My_password.g.cs
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\My_password.baml
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Edit_pass.g.cs
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Edit_pass.baml
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\ed_pass.g.cs
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\ed_pass.baml
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\labelpass.g.cs
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\labelpass.baml
