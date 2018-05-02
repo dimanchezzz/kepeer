@@ -15,9 +15,11 @@
                 </MenuItem>
                 <MenuItem Header="New" Margin="11,20,0,20" Click="MenuItem_Click"  HorizontalAlignment="Center"/>
                 <MenuItem Header="Help" Margin="11,20,0,20"/>
-                <MenuItem Header="Setting" Margin="11,20,0,20"/>
+                <MenuItem Header="Setting" Margin="11,20,0,20" Click="MenuItem_Click_3"/>
 
-                <MenuItem Header="Exit" Margin="11,20,0,20" Click="MenuItem_Click_1"/>
+                <MenuItem Header="Exit" Margin="11,20,0,20" Click="MenuItem_Click_1">
+                     
+                </MenuItem>
             </Menu>
 
         </StackPanel>

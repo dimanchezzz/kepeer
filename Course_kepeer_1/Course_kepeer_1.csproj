@@ -125,7 +125,13 @@
     <Compile Include="register.xaml.cs">
       <DependentUpon>register.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Reset_main.xaml.cs">
+      <DependentUpon>Reset_main.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resource_info.cs" />
+    <Compile Include="Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User_info.cs" />
     <Page Include="Add_pass.xaml">
       <SubType>Designer</SubType>
@@ -175,6 +181,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reset_main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

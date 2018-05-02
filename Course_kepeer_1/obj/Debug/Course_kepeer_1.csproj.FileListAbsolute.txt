@@ -50,3 +50,8 @@ D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\ed_pass.g.cs
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\ed_pass.baml
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\labelpass.g.cs
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\labelpass.baml
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Setting.g.cs
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Setting.baml
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Course_kepeer_1.csprojResolveAssemblyReference.cache
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Reset_main.g.cs
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Reset_main.baml

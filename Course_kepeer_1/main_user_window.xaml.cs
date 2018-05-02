@@ -92,5 +92,10 @@ namespace Course_kepeer_1
                 Close();
             }
         }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            User.Content = new Setting();
+        }
     }
 }

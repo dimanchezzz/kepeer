@@ -1,15 +1,16 @@
-﻿<Page x:Class="Course_kepeer_1.My_password"
+﻿<Page x:Class="Course_kepeer_1.Setting"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Course_kepeer_1"
       mc:Ignorable="d" 
-      d:DesignHeight="534" d:DesignWidth="722"
-      Title="My_password">
+d:DesignHeight="534" d:DesignWidth="722"
+      Title="Setting">
 
     <Grid>
-        <ListBox  Name="list" SelectionChanged="list_SelectionChanged"  />
+        <Button Height="50" Content="Reset Password" Width="120" Margin="70,70,532,414" Click="Button_Click_1"/>
+        <Button Height="50" Content="Style" Width="120" Margin="70,195,532,289" Click="Button_Click"/>
         <Border Name="border1" BorderThickness="1" HorizontalAlignment="Right" Width="5" RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
                 <TransformGroup>
@@ -25,6 +26,7 @@
                 </Frame>
             </Grid>
         </Border>
+
 
     </Grid>
 </Page>
