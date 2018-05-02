@@ -20,14 +20,18 @@ namespace Course_kepeer_1
     /// </summary>
     public partial class main_user_window : Window
     {
-      
+
+        
+
         private static User_info thisuser;
         
       //  private static byte[] keys=ASCIIEncoding.ASCII.GetBytes(Thisuser.Login.ToString());
         public main_user_window(User_info user)
         {
+          
             InitializeComponent();
             Thisuser = user;
+            date.Content = Thisuser.Login;
         }
 
         public static User_info Thisuser
@@ -66,6 +70,27 @@ namespace Course_kepeer_1
         {
             User.Content = new My_password();
 
+        }
+
+        private void Mouse_move(object sender, MouseEventArgs e)
+        {
+            date.FontFamily = new FontFamily("Century Gothic");
+        }
+
+        private void leave(object sender, MouseEventArgs e)
+        {
+            date.FontFamily = new FontFamily("Italic");
+        }
+
+        private void clack(object sender, MouseButtonEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Do you want to change the user?", "Question", MessageBoxButton.OK, MessageBoxImage.Question);
+            if (result==MessageBoxResult.OK)
+            {
+                MainWindow man = new MainWindow();
+                man.Show();
+                Close();
+            }
         }
     }
 }

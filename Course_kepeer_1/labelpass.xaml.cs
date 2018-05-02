@@ -23,7 +23,6 @@ namespace Course_kepeer_1
     public partial class labelpass : Page
     {
         Resource_info info;
-        Page a;
         Border Bo;
         public labelpass(Resource_info Info, Border bo)
         {

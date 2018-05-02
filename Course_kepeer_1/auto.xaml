@@ -8,19 +8,19 @@
       
       mc:Ignorable="d" 
       d:DesignHeight="550" d:DesignWidth="300"
-      Title="auto">
+      Title="auto" KeyDown="Enter">
     <!--<xctk:WatermarkTextBox Watermark="Enter First Name" />-->
    
         <Grid>
         <TextBlock Text="Authorization" FontSize="30" TextAlignment="Center"  Margin="0,10,0,0"  Width="300" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center"/>
 
-        <xctk:WatermarkTextBox  Watermark="Login" Width="270" Name="auto_log" BorderThickness="0.5" BorderBrush="Black" Margin="0,120,0,0" Background="Transparent" Height="35 "  VerticalAlignment="Top" FontSize="20"  TextAlignment="Center">
+        <xctk:WatermarkTextBox  Watermark="Login" Width="270"  PreviewKeyDown="auto_log_PreviewKeyDown"  Name="auto_log" BorderThickness="0.5" BorderBrush="Black" Margin="0,120,0,0" Background="Transparent" Height="35 "  VerticalAlignment="Top" FontSize="20"  TextAlignment="Center">
             
         </xctk:WatermarkTextBox>
-        <xctk:WatermarkPasswordBox Watermark="Password" Name="auto_pass"  Width="270" Height="35 " BorderThickness="0.5" VerticalAlignment="Top" Background="Transparent" BorderBrush="Black" TextAlignment="Center" Margin="0,180,0,0" FontSize="20" ToolTip="Password" >
+        <xctk:WatermarkPasswordBox PreviewKeyDown="auto_pass_PreviewKeyDown" Watermark="Password" Name="auto_pass"  Width="270" Height="35 " BorderThickness="0.5" VerticalAlignment="Top" Background="Transparent" BorderBrush="Black" TextAlignment="Center" Margin="0,180,0,0" FontSize="20" ToolTip="Password" >
            
         </xctk:WatermarkPasswordBox>
-        <Button Height="30" Width="100" VerticalAlignment="Bottom" Margin="120,0,0,100" Content="Authorization" Click="Button_Click" />
+        <Button Height="30" Width="100" VerticalAlignment="Bottom" IsDefault="True" Margin="120,0,0,100" Name="autoris" Content="Authorization" Click="Button_Click" />
 
         <Button Height="30" Width="100" VerticalAlignment="Bottom" Margin="0,0,120,100" Content="Password reset" Click="click_reset" />
         

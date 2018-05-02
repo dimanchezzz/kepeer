@@ -11,17 +11,18 @@
         <StackPanel HorizontalAlignment="Left" Width="60">
             <Menu >
                 <MenuItem  Header="     My &#xa;Password" Click="MenuItem_Click_2" Margin="0,20,0,20"  >
-                    
+
                 </MenuItem>
                 <MenuItem Header="New" Margin="11,20,0,20" Click="MenuItem_Click"  HorizontalAlignment="Center"/>
                 <MenuItem Header="Help" Margin="11,20,0,20"/>
                 <MenuItem Header="Setting" Margin="11,20,0,20"/>
-                
+
                 <MenuItem Header="Exit" Margin="11,20,0,20" Click="MenuItem_Click_1"/>
             </Menu>
 
         </StackPanel>
-        <Frame x:Name="User" Margin="60,35,0,0" NavigationUIVisibility="Hidden" HorizontalAlignment="Left" Width="732" />
+        <Frame x:Name="User" Margin="70,35,0,0" NavigationUIVisibility="Hidden" HorizontalAlignment="Left" Height="534" Width="722"  />
+        <Label Name="date" Margin="602,-5,0,519" FontSize="25" MouseMove="Mouse_move"  FontFamily="Italic" MouseLeave="leave" MouseDown="clack"/>
 
 
     </Grid>

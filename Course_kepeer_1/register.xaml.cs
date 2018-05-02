@@ -115,5 +115,31 @@ namespace Course_kepeer_1
             }
 
         }
+
+        private void log_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Enter)
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void pw1_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Enter)
+            {
+                e.Handled = true;
+            }
+
+        }
     }
 }

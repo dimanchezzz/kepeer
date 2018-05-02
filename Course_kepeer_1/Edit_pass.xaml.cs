@@ -69,22 +69,39 @@ namespace Course_kepeer_1
 
         private void delete_Click(object sender, RoutedEventArgs e)
         {
-            using (First_model db = new First_model())
-            {
-                IEnumerable<Resource_info> res = db.Resource_info.Where(u => u.Id.Equals(Info.Id));
-                Resource_info reso = res.First();
-               // db.Resource_info.
-                db.Resource_info.RemoveRange(res);
-                db.SaveChanges();
-                //My_password ms = new My_password();
-                onDeleteClick();
-                isEnab();
+            //    MessageBoxResult result = MessageBox.Show("Открыть Ворота?", "Ворота",
+            //MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-                //List<Resource_info> info = db.Resource_info.ToList();
-                //ms.list.ItemsSource = info;
-                //ms.list.DisplayMemberPath = "Resource";
-                return;
+            //    if (result == MessageBoxResult.Yes)
+            //    {
+
+            //        // Closes the parent form.
+            //        MessageBox.Show("Странно, Это работает?");
+            //        this.Close();
+
+            //    }
+            MessageBoxResult result = MessageBox.Show("Do you want to delete the entry?", "Question", MessageBoxButton.OK, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                using (First_model db = new First_model())
+                {
+                    IEnumerable<Resource_info> res = db.Resource_info.Where(u => u.Id.Equals(Info.Id));
+                    Resource_info reso = res.First();
+                    // db.Resource_info.
+                    db.Resource_info.RemoveRange(res);
+                    db.SaveChanges();
+                    //My_password ms = new My_password();
+                    onDeleteClick();
+                    isEnab();
+
+                    //List<Resource_info> info = db.Resource_info.ToList();
+                    //ms.list.ItemsSource = info;
+                    //ms.list.DisplayMemberPath = "Resource";
+                    return;
+                }
             }
+           
+           
 
         }
     }

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Course_kepeer_1"
       mc:Ignorable="d" 
       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-      d:DesignHeight="740" d:DesignWidth="565"
+      d:DesignHeight="534" d:DesignWidth="722"
       Title="Add_pass">
     <Grid>
         <StackPanel>

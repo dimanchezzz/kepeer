@@ -65,5 +65,34 @@ namespace Course_kepeer_1
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
+
+        private void Enter(object sender, KeyEventArgs e)
+        {
+           // if (e.Key == Key.Enter) ;
+               
+        }
+
+        private void auto_log_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key==Key.Space)
+            {
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Enter)
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void auto_pass_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
+          
+
+        }
     }
 }
