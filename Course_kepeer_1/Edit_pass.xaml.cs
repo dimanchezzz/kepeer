@@ -13,8 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
-
-
 namespace Course_kepeer_1
 {
     /// <summary>
@@ -52,7 +50,6 @@ namespace Course_kepeer_1
         {
             passworch.Content = new ed_pass(Info);
         }
-
         public delegate void MethodContainer();
         public static event MethodContainer onDeleteClick;
         public static event MethodContainer isEnab;
@@ -61,48 +58,24 @@ namespace Course_kepeer_1
             {
                 delete.IsEnabled = false;
                 edit.IsEnabled = false;
-
-            }
-            
-
+            }           
         }
-
         private void delete_Click(object sender, RoutedEventArgs e)
-        {
-            //    MessageBoxResult result = MessageBox.Show("Открыть Ворота?", "Ворота",
-            //MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            //    if (result == MessageBoxResult.Yes)
-            //    {
-
-            //        // Closes the parent form.
-            //        MessageBox.Show("Странно, Это работает?");
-            //        this.Close();
-
-            //    }
-            MessageBoxResult result = MessageBox.Show("Do you want to delete the entry?", "Question", MessageBoxButton.OK, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes)
+        {           
+            MessageBoxResult result = MessageBox.Show("Do you want to delete the entry?", "Question", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+            if (result == MessageBoxResult.OK)
             {
                 using (First_model db = new First_model())
                 {
                     IEnumerable<Resource_info> res = db.Resource_info.Where(u => u.Id.Equals(Info.Id));
-                    Resource_info reso = res.First();
-                    // db.Resource_info.
+                    Resource_info reso = res.First();                  
                     db.Resource_info.RemoveRange(res);
                     db.SaveChanges();
-                    //My_password ms = new My_password();
                     onDeleteClick();
                     isEnab();
-
-                    //List<Resource_info> info = db.Resource_info.ToList();
-                    //ms.list.ItemsSource = info;
-                    //ms.list.DisplayMemberPath = "Resource";
                     return;
                 }
-            }
-           
-           
-
+            }                  
         }
     }
 }

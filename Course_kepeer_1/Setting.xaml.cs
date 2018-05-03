@@ -28,18 +28,18 @@ namespace Course_kepeer_1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //my_passframe.Content = new Reset_main(border1);
-            //DoubleAnimation an = new DoubleAnimation();
-            //an.To = 300;
-            //an.Duration = TimeSpan.FromSeconds(0.3);
-            //border1.BeginAnimation(Border.WidthProperty, an);
+          
 
 
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            my_passframe.Content = new Reset_main(border1);
+            DoubleAnimation an = new DoubleAnimation();
+            an.To = 300;
+            an.Duration = TimeSpan.FromSeconds(0.3);
+            border1.BeginAnimation(Border.WidthProperty, an);
         }
     }
 }

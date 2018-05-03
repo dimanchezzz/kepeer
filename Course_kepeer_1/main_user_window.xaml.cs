@@ -25,7 +25,6 @@ namespace Course_kepeer_1
 
         private static User_info thisuser;
         
-      //  private static byte[] keys=ASCIIEncoding.ASCII.GetBytes(Thisuser.Login.ToString());
         public main_user_window(User_info user)
         {
           
@@ -84,7 +83,7 @@ namespace Course_kepeer_1
 
         private void clack(object sender, MouseButtonEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Do you want to change the user?", "Question", MessageBoxButton.OK, MessageBoxImage.Question);
+            MessageBoxResult result = MessageBox.Show("Do you want to change the user?", "Question", MessageBoxButton.OKCancel, MessageBoxImage.Question);
             if (result==MessageBoxResult.OK)
             {
                 MainWindow man = new MainWindow();
