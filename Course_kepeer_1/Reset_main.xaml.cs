@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 namespace Course_kepeer_1
 {
     /// <summary>
@@ -23,14 +24,30 @@ namespace Course_kepeer_1
         Border Bord;
         public Reset_main(Border bord)
         {
+            isEnable += Isena;
             InitializeComponent();
             Bord = bord;
             DataContext = this;
         }
+        public delegate void MethodCHeck();
+        public static event MethodCHeck isEnable;
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string property)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
+        public void Isena()
+        {
+            if (log.Text == "" || res.Text == "" )
+
+            {
+                sav.IsEnabled = false;
+
+            }
+            else
+            {
+                sav.IsEnabled = true;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -57,10 +74,24 @@ namespace Course_kepeer_1
                     IEnumerable<User_info> users = db.User_info.Where(u => u.Login.Equals(main_user_window.Thisuser.Login));
                     User_info user = users.FirstOrDefault<User_info>();
                     user.Password = Hash.GetHash(log.Text);
-                    db.SaveChanges();
+                    MessageBoxResult result = MessageBox.Show("Do you want to change the user?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        db.SaveChanges();
+                        MessageBox.Show("ok", "Message");
+
+                    }
+                    else
+                    {
+                        log.Clear();
+                        res.Clear();
+                        return;
+                    }
+                        
+                   
 
 
-                    MessageBox.Show("ok", "Message");
+                   
                 }
             }
 
@@ -80,6 +111,18 @@ namespace Course_kepeer_1
 
         }
 
-        
+        private void res_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            isEnable();
+
+        }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation an = new DoubleAnimation();
+            an.To = 0;
+            an.Duration = TimeSpan.FromSeconds(0.3);
+            Bord.BeginAnimation(Border.WidthProperty, an);
+        }
     }
 }

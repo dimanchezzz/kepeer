@@ -17,34 +17,33 @@ using System.Windows.Media.Animation;
 namespace Course_kepeer_1
 {
     /// <summary>
-    /// Логика взаимодействия для Setting.xaml
+    /// Логика взаимодействия для Style.xaml
     /// </summary>
-    public partial class Setting : Page
+    public partial class Style : Page
     {
-        public Setting()
+        Border Bord;
+        public Style(Border bord)
         {
             InitializeComponent();
+            Bord = bord;
+        }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation an = new DoubleAnimation();
+            an.To = 0;
+            an.Duration = TimeSpan.FromSeconds(0.3);
+            Bord.BeginAnimation(Border.WidthProperty, an);
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            my_passframe.Content = new Style(border1);
-            DoubleAnimation an = new DoubleAnimation();
-            an.To = 300;
-            an.Duration = TimeSpan.FromSeconds(0.3);
-            border1.BeginAnimation(Border.WidthProperty, an);
-
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            my_passframe.Content = new Reset_main(border1);
-            DoubleAnimation an = new DoubleAnimation();
-            an.To = 300;
-            an.Duration = TimeSpan.FromSeconds(0.3);
-            border1.BeginAnimation(Border.WidthProperty, an);
-
+        { 
+            if ( standart.IsChecked==true)
+            {
+                Resources = new ResourceDictionary() { Source = new Uri("Resources/standart_style.xaml", UriKind.Relative) };
+                MessageBox.Show("ok");
+            }
 
         }
     }
