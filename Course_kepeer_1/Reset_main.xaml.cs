@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,20 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 namespace Course_kepeer_1
 {
     /// <summary>
     /// Логика взаимодействия для Reset_main.xaml
     /// </summary>
     /// 
-    public partial class Reset_main : Page
+    public partial class Reset_main : Page, INotifyPropertyChanged
     {
         Border Bord;
         public Reset_main(Border bord)
         {
             InitializeComponent();
             Bord = bord;
+            DataContext = this;
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

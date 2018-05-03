@@ -32,7 +32,7 @@
             <xctk:WatermarkTextBox.Text>
                 <Binding Path="Name" Mode="TwoWay" UpdateSourceTrigger="LostFocus">
                     <Binding.ValidationRules>
-                        <local:answerValid></local:answerValid>
+                        <local:PasswordValidator></local:PasswordValidator>
                     </Binding.ValidationRules>
                 </Binding>
             </xctk:WatermarkTextBox.Text>
@@ -41,7 +41,7 @@
             <xctk:WatermarkTextBox.Text>
                 <Binding Path="Name" Mode="TwoWay" UpdateSourceTrigger="LostFocus">
                     <Binding.ValidationRules>
-                        <local:LoginValidator></local:LoginValidator>
+                        <local:PasswordValidator></local:PasswordValidator>
                     </Binding.ValidationRules>
                 </Binding>
             </xctk:WatermarkTextBox.Text>

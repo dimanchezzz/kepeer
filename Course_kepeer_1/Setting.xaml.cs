@@ -30,7 +30,6 @@ namespace Course_kepeer_1
         {
           
 
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -40,6 +39,8 @@ namespace Course_kepeer_1
             an.To = 300;
             an.Duration = TimeSpan.FromSeconds(0.3);
             border1.BeginAnimation(Border.WidthProperty, an);
+
+
         }
     }
 }
