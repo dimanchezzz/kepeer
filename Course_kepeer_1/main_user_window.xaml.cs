@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Security.Cryptography;
+using MahApps.Metro.Controls;
 
 namespace Course_kepeer_1
 {
     /// <summary>
     /// Логика взаимодействия для main_user_window.xaml
     /// </summary>
-    public partial class main_user_window : Window
+    public partial class main_user_window : MetroWindow
     {
 
         
@@ -88,13 +89,31 @@ namespace Course_kepeer_1
             {
                 MainWindow man = new MainWindow();
                 man.Show();
-                Close();
+             //   this.Close();
             }
         }
 
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
             User.Content = new Setting();
+        }
+        private MetroWindow accentThemeTestWindow;
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (accentThemeTestWindow != null)
+            {
+                accentThemeTestWindow.Activate();
+                return;
+            }
+
+            accentThemeTestWindow = new AccentStyleWindow();
+            accentThemeTestWindow.Owner = this;
+            accentThemeTestWindow.Closed += (o, args) => accentThemeTestWindow = null;
+            accentThemeTestWindow.Left = this.Left + this.ActualWidth / 2.0;
+            accentThemeTestWindow.Top = this.Top + this.ActualHeight / 2.0;
+            accentThemeTestWindow.Show();
+
         }
     }
 }

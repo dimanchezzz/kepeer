@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
+using MahApps.Metro.Controls;
+using MahApps.Metro;
 
 namespace Course_kepeer_1
 {
@@ -25,6 +27,7 @@ namespace Course_kepeer_1
         {
             InitializeComponent();
         }
+      
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -33,6 +36,7 @@ namespace Course_kepeer_1
             an.To = 300;
             an.Duration = TimeSpan.FromSeconds(0.3);
             border1.BeginAnimation(Border.WidthProperty, an);
+
 
 
         }
