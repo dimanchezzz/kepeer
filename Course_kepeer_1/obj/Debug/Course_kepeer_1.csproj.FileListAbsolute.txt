@@ -57,7 +57,6 @@ D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Reset_main.baml
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Style.g.cs
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Style.baml
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\App.baml
-D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Dictionary1.baml
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\bin\Debug\ControlzEx.dll
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\bin\Debug\MahApps.Metro.dll
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\bin\Debug\System.Windows.Interactivity.dll

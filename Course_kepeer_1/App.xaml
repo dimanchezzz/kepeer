@@ -14,7 +14,28 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+            <Style TargetType="Button">
+                <Style.Setters>
+                    
+                </Style.Setters>
+                <Style.Triggers>
+                    <EventTrigger RoutedEvent="Click">
+                        <BeginStoryboard>
+                            <Storyboard>
 
+                                <!-- Blur the Button and then animate back to normal. -->
+                                <!--<DoubleAnimation
+               Storyboard.TargetName="myBlurBitmapEffect"
+               Storyboard.TargetProperty="Radius"
+               From="0" To="40" Duration="0:0:0.3"
+               AutoReverse="True" />-->
+                               
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+        
     </Application.Resources>
 </Application>

@@ -89,7 +89,7 @@ namespace Course_kepeer_1
             {
                 MainWindow man = new MainWindow();
                 man.Show();
-             //   this.Close();
+                Close();
             }
         }
 

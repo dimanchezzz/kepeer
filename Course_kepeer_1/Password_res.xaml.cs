@@ -21,26 +21,38 @@ namespace Course_kepeer_1
     {
         public Password_res()
         {
+            
             InitializeComponent();
         }
 
+
+
         private void go_click(object sender, RoutedEventArgs e)
         {
-            using (First_model db = new First_model())
-            {
-                IEnumerable<User_info> user = db.User_info.Where(u => u.Login.Equals(logcheck.Text));                
-                if (user.Count()==0)
+           
+                using (First_model db = new First_model())
                 {
-                    MessageBox.Show("Login not already exists", "Error");
-                    return;
+                    IEnumerable<User_info> user = db.User_info.Where(u => u.Login.Equals(logcheck.Text));
+                    if (user.Count() == 0)
+                    {
+                        MessageBox.Show("Login not already exists", "Error");
+                        logcheck.Clear();
+                        Ans.Clear();
+                        newe.Clear();
+                        Quest.IsEnabled = false;
+                        return;
+                    }
+                    User_info use = user.FirstOrDefault();
+                    Quest.Content = use.Question;
                 }
-                User_info use = user.FirstOrDefault();
-                Quest.Content = use.Question;
-            }              
-        }
+                Quest.IsEnabled = true;
+            }
+           
+        
 
         private void logcheck_SelectionChanged(object sender, RoutedEventArgs e)
         {
+          
             if (logcheck.Text.Length == 0)
             {
                 go1.IsEnabled = false;
@@ -53,22 +65,47 @@ namespace Course_kepeer_1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            using (First_model db = new First_model())
+            try
             {
-                IEnumerable<User_info> users = db.User_info.Where(u => u.Login.Equals(logcheck.Text));
-                User_info user = users.First();
-                if (user.Answer.Equals(Ans.Text))
+                using (First_model db = new First_model())
                 {
-                    user.Password = Hash.GetHash(newe.Text);
-                    db.SaveChanges();
-                    MessageBox.Show("ok");
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("incorrect unswer","Error");
+                    IEnumerable<User_info> users = db.User_info.Where(u => u.Login.Equals(logcheck.Text));
+                    User_info user = users.First();
+                    if (user.Answer.Equals(Ans.Text))
+                    {
+                        user.Password = Hash.GetHash(newe.Text);
+                        db.SaveChanges();
+                        MessageBox.Show("ok");
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("incorrect unswer", "Error");
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Incorrectly entered data");
+                logcheck.Clear();
+                Ans.Clear();
+                newe.Clear();
+                Quest.IsEnabled = false;
+                return;
+            }
+        }
+
+    
+
+        private void Ans_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            if (Ans.Text.Length == 0 || newe.Text.Length==0 || Quest.IsEnabled==false )
+            {
+                rese.IsEnabled = false;
+                return;
+            }
+            else
+                rese.IsEnabled = true;
 
         }
     }
