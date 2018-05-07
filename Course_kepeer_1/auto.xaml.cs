@@ -19,8 +19,7 @@ namespace Course_kepeer_1
     /// Логика взаимодействия для auto.xaml
     /// </summary>
     public partial class auto : Page, INotifyPropertyChanged
-    {
-        
+    {       
         Window a;
         public auto(Window o)
         {
@@ -28,17 +27,13 @@ namespace Course_kepeer_1
             a = o;
             DataContext = this;
         }
-
         private void click_reset(object sender, RoutedEventArgs e)
         {
             Password_res pas = new Password_res();
             pas.Show();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
-
             using (First_model db = new First_model())
             {
 
@@ -58,21 +53,18 @@ namespace Course_kepeer_1
                 }
                 else
                     MessageBox.Show("bad password","Error");
-            }
-               
+            }             
         }
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string property)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
-
         private void Enter(object sender, KeyEventArgs e)
         {
            // if (e.Key == Key.Enter) ;
                
         }
-
         private void auto_log_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if(e.Key==Key.Space)

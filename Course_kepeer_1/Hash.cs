@@ -21,7 +21,6 @@ namespace Course_kepeer_1
                 hash += String.Format("{0:x2}", b);
             }
             return hash;
-
         }
     }
 }

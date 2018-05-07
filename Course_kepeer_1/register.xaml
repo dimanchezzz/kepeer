@@ -27,11 +27,8 @@
             </DockPanel>
         </ControlTemplate>
     </Page.Resources>
-
     <Grid>
-
         <TextBlock Text="Register" FontSize="30" TextAlignment="Center"  Margin="0,10,0,0"  MinWidth="250" MinHeight="35 " VerticalAlignment="Top" HorizontalAlignment="Center"/>
-
         <xctk:WatermarkTextBox PreviewKeyDown="log_PreviewKeyDown" MaxWidth="400" Validation.ErrorTemplate="{StaticResource validationErrorTemplate}" Name="log" Watermark="Login"  BorderThickness="0.5" BorderBrush="Black" Margin="60,80,60,0" Background="Transparent" MinWidth="250" MinHeight="35 "  VerticalAlignment="Top" FontSize="20"  TextAlignment="Center">
             <xctk:WatermarkTextBox.Text>
                 <Binding Path="Name" Mode="TwoWay" UpdateSourceTrigger="LostFocus">
@@ -41,7 +38,6 @@
                 </Binding>
             </xctk:WatermarkTextBox.Text>
         </xctk:WatermarkTextBox>
-
         <xctk:WatermarkPasswordBox Watermark="Password"   MaxWidth="400" PreviewKeyDown="pw1_PreviewKeyDown" Validation.ErrorTemplate="{StaticResource validationErrorTemplate}"  MinWidth="250" MinHeight="35 " BorderThickness="0.5" VerticalAlignment="Top" Background="Transparent" BorderBrush="Black" Margin="60,140,60,0" FontSize="20" ToolTip="Password" Name="pw1"  >
             <xctk:WatermarkPasswordBox.Text>
                 <Binding Path="Name" Mode="TwoWay" UpdateSourceTrigger="LostFocus">
@@ -80,7 +76,6 @@
                 </Binding>
             </xctk:WatermarkTextBox.Text>
         </xctk:WatermarkTextBox>
-        <!--Margin="0,320,0,0"-->
         <Button MinHeight="30" MinWidth="100" IsDefault="True" IsEnabled="False" VerticalAlignment="Bottom" MaxWidth="300" Margin="120,0,120,40" Content="Register" Click="registers_Click"   Name="registers"/>
     </Grid>
 </Page>

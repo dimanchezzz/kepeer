@@ -113,6 +113,9 @@
       <DependentUpon>Add_pass.xaml</DependentUpon>
     </Compile>
     <Compile Include="answerValid.cs" />
+    <Compile Include="Change_pass.xaml.cs">
+      <DependentUpon>Change_pass.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Coding.cs" />
     <Compile Include="Delete_User.xaml.cs">
       <DependentUpon>Delete_User.xaml</DependentUpon>
@@ -125,6 +128,9 @@
     </Compile>
     <Compile Include="ed_pass.xaml.cs">
       <DependentUpon>ed_pass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="first.xaml.cs">
+      <DependentUpon>first.xaml</DependentUpon>
     </Compile>
     <Compile Include="First_model.cs" />
     <Compile Include="Hash.cs" />
@@ -144,6 +150,11 @@
     <Compile Include="PasswordValidator.cs" />
     <Compile Include="Password_res.xaml.cs">
       <DependentUpon>Password_res.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Question.xaml.cs">
       <DependentUpon>Question.xaml</DependentUpon>
@@ -173,6 +184,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Change_pass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Delete_User.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -186,6 +201,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ed_pass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="first.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -245,11 +264,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -270,21 +284,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\agreement.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\user.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\0-9.JPG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\az.JPG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\A-Z.JPG" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -310,28 +315,59 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1.JPG" />
+    <Resource Include="Resources\1.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\2.JPG" />
+    <Resource Include="Resources\2.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\del_acc.JPG" />
+    <Resource Include="Resources\del_acc.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\delete..JPG" />
+    <Resource Include="Resources\delete..JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\new_pass.JPG" />
+    <Resource Include="Resources\new_pass.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\newuser.JPG" />
+    <Resource Include="Resources\newuser.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\style.JPG" />
+    <Resource Include="Resources\style.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\edithelp.JPG" />
+    <Resource Include="Resources\edithelp.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\whatt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ico.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

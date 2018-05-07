@@ -26,25 +26,25 @@ namespace Course_kepeer_1
         }
         public delegate void question();
         public static event question onNewUser;
-
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        {         
             using (First_model db = new First_model())
             {
-                IEnumerable<User_info> res = db.User_info.Where(u => u.Id.Equals(main_user_window.Thisuser.Id));
-                User_info reso = res.First();
-                db.User_info.RemoveRange(res);
+                IEnumerable<Resource_info> res = db.Resource_info.Where(u => u.User.Equals(main_user_window.Thisuser.Login));
+                Resource_info resoz = res.FirstOrDefault();
+                db.Resource_info.RemoveRange(res);
+                db.SaveChanges();
+                IEnumerable<User_info> resz = db.User_info.Where(u => u.Id.Equals(main_user_window.Thisuser.Id));
+                User_info reso = resz.First();
+                db.User_info.RemoveRange(resz);
                 db.SaveChanges();
                 onNewUser();
                 Close();
             }
-
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
+        {           
             Close();
-
-        }
+        }    
     }
 }

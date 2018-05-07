@@ -61,15 +61,11 @@ namespace Course_kepeer_1
                 delete.IsEnabled = false;
                 edit.IsEnabled = false;
             }           
-        }
-       
+        }      
         private void delete_Click(object sender, RoutedEventArgs e)
         {
             Del_pass dele = new Del_pass();
             dele.Show();
-            
-
-
         }
         public static void delll()
         {

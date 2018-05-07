@@ -9,9 +9,9 @@
                       BorderThickness="0" 
                       GlowBrush="Black"
                       ResizeMode="CanResizeWithGrip"
-
                       WindowTransitionsEnabled="False"
                       WindowStartupLocation="CenterScreen"
+                      Icon="Resources/icon.png"
         x:Name="first_window"
         Title="Kepeer" MinHeight="550" MinWidth="400" Width="400">
     <Window.Resources>
@@ -34,12 +34,10 @@
             </DockPanel>
         </ControlTemplate>
     </Window.Resources>
-    
-   
     <Grid>
         <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top" >
-            <Button Content="Auto" MinWidth="100" Height="35" VerticalAlignment="Bottom" Click="btn_click_auto"/>
-            <Button Margin="10,0,0,0" Content="Register" MinWidth="100" Click="claick_register"/>
+            <Button Content="Sing in" MinWidth="100" Height="35" VerticalAlignment="Bottom" Click="btn_click_auto"/>
+            <Button Margin="10,0,0,0" Content="Sign up" MinWidth="100" Click="claick_register"/>
         </StackPanel>
         <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="Hidden" />
     </Grid>

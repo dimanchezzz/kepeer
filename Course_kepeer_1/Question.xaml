@@ -9,7 +9,6 @@
                       BorderThickness="0" 
                       GlowBrush="Black"
                       ResizeMode="CanResizeWithGrip"
-
                       WindowTransitionsEnabled="False"
                       WindowStartupLocation="CenterScreen"
         Title="Question" MinHeight="150" MinWidth="270" Height="150" Width="270" MaxHeight="150" MaxWidth="270">
@@ -17,6 +16,5 @@
         <Label Height="50"  HorizontalAlignment="Center">Do you want to change the user?</Label>
         <Button Height="10" Click="Button_Click" Content="Ok" Width="70" Margin="38,84,154,10"/>
         <Button Height="10" Content="Cancel" Click="Button_Click_1" Width="70" Margin="154,84,38,10"/>
-
     </Grid>
 </Controls:MetroWindow>

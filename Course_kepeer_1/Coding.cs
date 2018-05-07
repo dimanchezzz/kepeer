@@ -11,30 +11,20 @@ namespace Course_kepeer_1
     class Coding
     {
         byte[] S = new byte[256];
-
         int x = 0;
-        int y = 0;
-       
-        byte[] key = ASCIIEncoding.ASCII.GetBytes(main_user_window.Thisuser.Login);
-        
-        
-
+        int y = 0;     
+        byte[] key = ASCIIEncoding.ASCII.GetBytes(main_user_window.Thisuser.Login);              
         public Coding()
         {   
             init(key);
         }
-
-        // Key-Scheduling Algorithm 
-        // Алгоритм ключевого расписания 
         private void init(byte[] key)
         {
             int keyLength = key.Length;
-
             for (int i = 0; i < 256; i++)
             {
                 S[i] = (byte)i;
             }
-
             int j = 0;
             for (int i = 0; i < 256; i++)
             {
@@ -42,7 +32,6 @@ namespace Course_kepeer_1
                 S.Swap(i, j);
             }
         }
-        //byte[] dataB, int size
         public string Encode(string line)
         {
             JavaScriptSerializer seriallizer = new JavaScriptSerializer();
@@ -72,27 +61,15 @@ namespace Course_kepeer_1
             string go;
             go = ASCIIEncoding.ASCII.GetString(chipher);
             return go;
-
-
-
-
-
-
         }
-
-        // Pseudo-Random Generation Algorithm 
-        // Генератор псевдослучайной последовательности 
         private byte keyItem()
         {
             x = (x + 1) % 256;
             y = (y + S[x]) % 256;
-
             S.Swap(x, y);
-
             return S[(S[x] + S[y]) % 256];
         }
     }
-
     static class SwapExt
     {
         public static void Swap<T>(this T[] array, int index1, int index2)
@@ -101,17 +78,5 @@ namespace Course_kepeer_1
             array[index1] = array[index2];
             array[index2] = temp;
         }
-
-
     }
 }
-//byte[] key = ASCIIEncoding.ASCII.GetBytes("Key");
-
-//RC4 encoder = new RC4(key);
-//string testString = "Plaintext";
-//byte[] testBytes = ASCIIEncoding.ASCII.GetBytes(testString);
-//byte[] result = encoder.Encode(testBytes, testBytes.Length);
-
-//RC4 decoder = new RC4(key);
-//byte[] decryptedBytes = decoder.Decode(result, result.Length);
-//string decryptedString = ASCIIEncoding.ASCII.GetString(decryptedBytes);

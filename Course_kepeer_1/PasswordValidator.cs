@@ -18,11 +18,8 @@ namespace Course_kepeer_1
             else
             {
                 if (value.ToString().Length < 8)
-                    return new ValidationResult(false, "Password cannot be less than 8 characters long.");
-               
-               
-            }
-           
+                    return new ValidationResult(false, "Password cannot be less than 8 characters long.");                        
+            }         
             return ValidationResult.ValidResult;
         }
     }

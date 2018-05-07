@@ -7,16 +7,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="labelpass">
-
     <Grid>
         <TextBlock Text=" Resource:" FontSize="20" TextAlignment="Left"  Margin="15,3,-15,0"  Width="300" Height="29" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <TextBlock Text=" Login:" FontSize="20" TextAlignment="Left"  Margin="15,73,-15,0"  Width="300" Height="27" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <TextBlock Text=" Password:" FontSize="20" TextAlignment="Left"  Margin="16,143,-16,0"  Width="300" Height="27" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-
         <Label Width="270" Name="resou"     Margin="0,30,0,0" Background="Transparent" Height="37 "   VerticalAlignment="Top" FontSize="20"  />
         <Label Width="270" Name="log"   Margin="0,100,0,0" Background="Transparent" Height="37 "  VerticalAlignment="Top" FontSize="20" MouseDown="log_MouseDown"  />
         <Label Width="270" Name="pass"    Margin="0,170,0,0" Background="Transparent" Height="37 "  VerticalAlignment="Top" FontSize="20" MouseDown="cory"  />
         <Label Width="270" Name="notification"    Margin="16,0,14,30" Background="Transparent" FontSize="20" Visibility="Collapsed" Content="Copied to clipboard" Height="37" VerticalAlignment="Bottom"  />
-
     </Grid>
 </Page>

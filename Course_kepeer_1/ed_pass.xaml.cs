@@ -42,15 +42,12 @@ namespace Course_kepeer_1
 
             {
                 save.IsEnabled = false;
-
             }
             else
             {
                 save.IsEnabled = true;
             }
         }
-
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (Regex.IsMatch(pass.Text, register.pattern))
@@ -70,14 +67,11 @@ namespace Course_kepeer_1
                 db.SaveChanges();
                 MessageBox.Show("Ok");
                 return;
-
-
             }           
         }
         private void resou_SelectionChanged(object sender, RoutedEventArgs e)
         {
             isEnable();
-
         }
     }
 }

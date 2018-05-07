@@ -24,8 +24,8 @@ namespace Course_kepeer_1
         public MainWindow()
         {
             InitializeComponent();
+            Main.Content = new first();
         }
-
         private void btn_click_auto(object sender, RoutedEventArgs e)
         {
             Main.Content = new auto(first_window);

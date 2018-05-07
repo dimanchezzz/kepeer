@@ -12,7 +12,6 @@ namespace Course_kepeer_1
     {
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
         {
-
             if (value == null)
                 return new ValidationResult(false, "value cannot be empty.");
             else

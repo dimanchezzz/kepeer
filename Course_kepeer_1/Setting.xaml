@@ -8,7 +8,6 @@
       mc:Ignorable="d" 
 d:DesignHeight="534" d:DesignWidth="722"
       Title="Setting">
-
     <Grid>
         <Button Height="50" Content="Reset Password" Width="120" Margin="70,70,0,414" Click="Button_Click_1" HorizontalAlignment="Left"/>
         <Button Height="50" Content="Style" Width="120" Margin="70,195,0,289" Click="Button_Click" HorizontalAlignment="Left"/>
@@ -23,12 +22,9 @@ d:DesignHeight="534" d:DesignWidth="722"
             </Border.RenderTransform>
             <Grid Background="SeaShell" >
                 <Frame Name="my_passframe" >
-
                 </Frame>
             </Grid>
         </Border>
         <Button Height="50" Content="Delete accaunt" Width="120" Margin="70,325,0,159" Click="Button_Click_2" HorizontalAlignment="Left"/>
-
-
     </Grid>
 </Page>

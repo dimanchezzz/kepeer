@@ -23,15 +23,10 @@ namespace Course_kepeer_1
     {
         public Password_res()
         {
-            
             InitializeComponent();
         }
-
-
-
         private void go_click(object sender, RoutedEventArgs e)
-        {
-           
+        {         
                 using (First_model db = new First_model())
                 {
                     IEnumerable<User_info> user = db.User_info.Where(u => u.Login.Equals(logcheck.Text));
@@ -49,12 +44,8 @@ namespace Course_kepeer_1
                 }
                 Quest.IsEnabled = true;
             }
-           
-        
-
         private void logcheck_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-          
+        {        
             if (logcheck.Text.Length == 0)
             {
                 go1.IsEnabled = false;
@@ -64,7 +55,6 @@ namespace Course_kepeer_1
                 go1.IsEnabled = true;
 
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -89,6 +79,7 @@ namespace Course_kepeer_1
                     else
                     {
                         MessageBox.Show("incorrect unswer", "Error");
+                        Ans.Clear();
                     }
                 }
             }
@@ -102,9 +93,6 @@ namespace Course_kepeer_1
                 return;
             }
         }
-
-    
-
         private void Ans_SelectionChanged(object sender, RoutedEventArgs e)
         {
             if (Ans.Text.Length == 0 || newe.Text.Length==0 || Quest.IsEnabled==false )
@@ -114,7 +102,6 @@ namespace Course_kepeer_1
             }
             else
                 rese.IsEnabled = true;
-
         }
     }
 }

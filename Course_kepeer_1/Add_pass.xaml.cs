@@ -26,13 +26,8 @@ namespace Course_kepeer_1
         public Add_pass()
         {
             InitializeComponent();
-            onEnable += Isena;
-            
-           
-
-           
+            onEnable += Isena;     
         }
-
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             string dic = "";
@@ -51,8 +46,7 @@ namespace Course_kepeer_1
             {
                 dic += "0123456789";
             }
-            //if(az.IsChecked==true)
-            //{
+          
                 tmp = "";
                 char nchar;
                 for (int i = 97; i < 123; i++)
@@ -61,7 +55,6 @@ namespace Course_kepeer_1
                     tmp += Convert.ToString(nchar);
                 }
                 dic += tmp;
-            //}
             string pass = "";
             Random mran = new Random();
             for(int i=0;i<slValue.Value;i++)
@@ -72,8 +65,6 @@ namespace Course_kepeer_1
             }
             password.Text = pass;
         }
-
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (Regex.IsMatch(password.Text, register.pattern))
@@ -95,9 +86,6 @@ namespace Course_kepeer_1
                         Password_resource = cod.Encode(password.Text),
                         User = main_user_window.Thisuser.Login,
                         User_id = main_user_window.Thisuser.Id
-
-
-
                     };
                     db.Resource_info.Add(rs);
                     db.SaveChanges();
@@ -105,17 +93,12 @@ namespace Course_kepeer_1
                     Res.Clear();
                     Log_res.Clear();
                     password.Clear();
-
-
                 }
-
             }
         }
-
         public void Isena()
         {
             if(Log_res.Text=="" || Res.Text=="" ||password.Text=="")
-
             {
                 add.IsEnabled = false;
 
@@ -127,16 +110,11 @@ namespace Course_kepeer_1
         }
         public delegate void MethodContainer();
         public static event MethodContainer onEnable;
-
-       
-
         private void Res_SelectionChanged(object sender, RoutedEventArgs e)
         {
             onEnable();
 
-        }
-
-       
+        }     
     }
 }
 

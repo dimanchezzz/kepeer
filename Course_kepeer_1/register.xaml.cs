@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 
 namespace Course_kepeer_1
 {
@@ -27,19 +30,16 @@ namespace Course_kepeer_1
         public register()
         {
             InitializeComponent();
-            DataContext = this;
-           
+            DataContext = this;          
         }     
         private void Click_agreement(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("hi");
+            Process.Start("agree.txt");
         }
-
         private void TextBlock_MouseMove(object sender, MouseEventArgs e)
         {
-            agreement.FontSize=13;
+            agreement.FontSize = 15;
         }
-
         private void agreement_MouseLeave(object sender, MouseEventArgs e)
         {
             agreement.FontSize = 12;
@@ -62,14 +62,12 @@ namespace Course_kepeer_1
                 pw1.Clear();
                 pw2.Clear();
                 return;
-            }
-            
+            }         
             else if (Regex.IsMatch(log.Text, pattern))
             {
                 MessageBox.Show("Invalid login format");
                 log.Clear();
                 return;
-
             }
             else if (Regex.IsMatch(pw1.Password, pattern))
             {
@@ -77,7 +75,6 @@ namespace Course_kepeer_1
                 pw1.Clear();
                 pw2.Clear();
                 return;
-
             }
             using (First_model db = new First_model())
             {
@@ -88,12 +85,10 @@ namespace Course_kepeer_1
                     return;
                 }
                 else
-                    try
-                    
+                    try                  
                     {
                     User_info User1 = new User_info
                     {
-
                         Login = log.Text,
                         Password = Hash.GetHash(pw1.Password),
                         Question = qu.Text,
@@ -101,8 +96,7 @@ namespace Course_kepeer_1
                     };
                     db.User_info.Add(User1);
                     db.SaveChanges();
-                    MessageBox.Show("ok", "Message");
-                    
+                    MessageBox.Show("ok", "Message");                    
                 }
                 catch (Exception)
                 {

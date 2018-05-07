@@ -10,11 +10,8 @@
       Title="Add_pass">
     <Grid>
         <StackPanel>
-
-            <!--<xctk:WatermarkTextBox Watermark="Resources" Width="340" BorderThickness="0.5" BorderBrush="Black" Margin="0,120,0,0" Background="Transparent" Height="35 "  VerticalAlignment="Top" FontSize="20"  TextAlignment="Center"/>-->
             <xctk:WatermarkTextBox Watermark="Resources" SelectionChanged="Res_SelectionChanged" Width="340" BorderThickness="0.5" BorderBrush="Black" Margin="0,120,0,0" Background="Transparent" Height="35 " VerticalAlignment="Top" FontSize="20"  Name="Res" TextAlignment="Center"/>
             <xctk:WatermarkTextBox Watermark="Login" SelectionChanged="Res_SelectionChanged" Width="340" Name="Log_res" BorderThickness="0.5" BorderBrush="Black" Margin="0,40,0,0" Background="Transparent" Height="35 " VerticalAlignment="Top" FontSize="20"  TextAlignment="Center"/>
-
             <xctk:WatermarkTextBox Watermark="Password" SelectionChanged="Res_SelectionChanged"  Width="340" BorderThickness="0.5" BorderBrush="Black" Margin="0,40,0,0" Background="Transparent" Height="35 " VerticalAlignment="Top" FontSize="20"  TextAlignment="Center" Name="password" Text=""/>
             <Expander Header="Geniration" Margin="10,10,10,0">
                 <StackPanel>
@@ -25,21 +22,12 @@
                     <Slider Margin="40,0,40,0" Name="slValue" ValueChanged="Slider_ValueChanged" Value="0" Maximum="30" Minimum="0"  TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True" />
                     <StackPanel Orientation="Horizontal">
                         <ToggleButton Margin="10,20,0,0" HorizontalAlignment="Left" Name="AZ" Content="A-Z">
-                            <!--<Image Source="Resources/A-Z.jpg"   />-->
-
                         </ToggleButton>
-                        <!--<ToggleButton Margin="10,20,0,0" HorizontalAlignment="Left" Name="az" Content="a-z">
-                            -->
-                        <!--<Image Source="Resources/az.jpg"></Image>-->
-                        <!--
-                        </ToggleButton>-->
                         <ToggleButton Margin="10,20,0,0" HorizontalAlignment="Left" Name="zero" Content="0-9">
-                            <!--<Image Source="Resources/0-9.jpg"/>-->
                         </ToggleButton>
                     </StackPanel>
                 </StackPanel>
             </Expander>
-
         </StackPanel>
         <Button MinHeight="40" Height="40" MaxHeight="40" MaxWidth="300" MinWidth="140" Margin="291,447,291,47" Click="Button_Click" Name="add" IsEnabled="False" Content="Add" />
     </Grid>

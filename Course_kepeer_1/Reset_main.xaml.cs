@@ -28,6 +28,8 @@ namespace Course_kepeer_1
             InitializeComponent();
             Bord = bord;
             DataContext = this;
+            Change_pass.onNewUser += New_pass;
+            Change_pass.cler += Claere;
         }
         public delegate void MethodCHeck();
         public static event MethodCHeck isEnable;
@@ -39,17 +41,14 @@ namespace Course_kepeer_1
         public void Isena()
         {
             if (log.Text == "" || res.Text == "" )
-
             {
                 sav.IsEnabled = false;
-
             }
             else
             {
                 sav.IsEnabled = true;
             }
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (Validation.GetHasError(log) == true || Validation.GetHasError(res))
@@ -66,40 +65,28 @@ namespace Course_kepeer_1
             }
             else
             {
-
-
-                using (First_model db = new First_model())
-                {
-           
-                    IEnumerable<User_info> users = db.User_info.Where(u => u.Login.Equals(main_user_window.Thisuser.Login));
-                    User_info user = users.FirstOrDefault<User_info>();
-                    user.Password = Hash.GetHash(log.Text);
-                    MessageBoxResult result = MessageBox.Show("Do you want to change the user?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                    if (result == MessageBoxResult.Yes)
-                    {
-                        db.SaveChanges();
-                        MessageBox.Show("ok", "Message");
-
-                    }
-                    else
-                    {
-                        log.Clear();
-                        res.Clear();
-                        return;
-                    }
-                        
-                   
-
-
-                   
-                }
+                Change_pass ch = new Change_pass();
+                ch.Show();              
             }
-
         }
-
+        public void Claere()
+        {
+            log.Clear();
+            res.Clear();          
+        }
+        public  void New_pass()
+        {
+            using (First_model db = new First_model())
+            {
+                IEnumerable<User_info> users = db.User_info.Where(u => u.Login.Equals(main_user_window.Thisuser.Login));
+                User_info user = users.FirstOrDefault<User_info>();
+                user.Password = Hash.GetHash(log.Text);
+                db.SaveChanges();
+                MessageBox.Show("");
+            }
+        }
         private void res_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-
             if (e.Key == Key.Space)
             {
                 e.Handled = true;
@@ -108,15 +95,11 @@ namespace Course_kepeer_1
             {
                 e.Handled = true;
             }
-
         }
-
         private void res_SelectionChanged(object sender, RoutedEventArgs e)
         {
             isEnable();
-
         }
-
         private void back_Click(object sender, RoutedEventArgs e)
         {
             DoubleAnimation an = new DoubleAnimation();

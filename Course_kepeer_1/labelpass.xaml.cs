@@ -48,14 +48,12 @@ namespace Course_kepeer_1
             notification.Visibility = Visibility.Collapsed;
             dispatcherTimer.IsEnabled = false;
         }
-
         private void log_MouseDown(object sender, MouseButtonEventArgs e)
         {
             notification.Visibility = Visibility.Visible;
             Clipboard.SetText(log.Content.ToString());
             dispatcherTimer.Start();
         }
-
         private void cory(object sender, MouseButtonEventArgs e)
         {
             notification.Visibility = Visibility.Visible;

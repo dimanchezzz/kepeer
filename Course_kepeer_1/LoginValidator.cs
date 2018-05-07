@@ -14,17 +14,13 @@ namespace Course_kepeer_1
       
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
         {
-
             if (value == null)
                 return new ValidationResult(false, "value cannot be empty.");
             else
             {
                 if (value.ToString().Length < 4)
-                    return new ValidationResult(false, "Name cannot be less than 4 characters long.");
-                
-                
-            }
-            
+                    return new ValidationResult(false, "Name cannot be less than 4 characters long.");                         
+            }           
             return ValidationResult.ValidResult;
         }
     }
