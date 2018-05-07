@@ -32,6 +32,9 @@ namespace Course_kepeer_1
             InitializeComponent();
             Thisuser = user;
             date.Content = Thisuser.Login;
+            Setting.onstyleclick += Stylce;
+            Question.onNewUser += Closedf;
+            Delete_User.onNewUser += Closedf;
         }
 
         public static User_info Thisuser
@@ -74,7 +77,7 @@ namespace Course_kepeer_1
 
         private void Mouse_move(object sender, MouseEventArgs e)
         {
-            date.FontFamily = new FontFamily("Century Gothic");
+            date.FontFamily = new FontFamily("Garamond");
         }
 
         private void leave(object sender, MouseEventArgs e)
@@ -84,13 +87,8 @@ namespace Course_kepeer_1
 
         private void clack(object sender, MouseButtonEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Do you want to change the user?", "Question", MessageBoxButton.OKCancel, MessageBoxImage.Question);
-            if (result==MessageBoxResult.OK)
-            {
-                MainWindow man = new MainWindow();
-                man.Show();
-                Close();
-            }
+            Question qu = new Question();
+            qu.Show();      
         }
 
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
@@ -99,7 +97,8 @@ namespace Course_kepeer_1
         }
         private MetroWindow accentThemeTestWindow;
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        
+        private void Stylce()
         {
             if (accentThemeTestWindow != null)
             {
@@ -113,6 +112,15 @@ namespace Course_kepeer_1
             accentThemeTestWindow.Left = this.Left + this.ActualWidth / 2.0;
             accentThemeTestWindow.Top = this.Top + this.ActualHeight / 2.0;
             accentThemeTestWindow.Show();
+
+        }
+        private void Closedf()
+        {
+            Close();
+        }
+
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
 
         }
     }

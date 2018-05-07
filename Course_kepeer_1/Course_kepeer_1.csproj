@@ -114,6 +114,12 @@
     </Compile>
     <Compile Include="answerValid.cs" />
     <Compile Include="Coding.cs" />
+    <Compile Include="Delete_User.xaml.cs">
+      <DependentUpon>Delete_User.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Del_pass.xaml.cs">
+      <DependentUpon>Del_pass.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Edit_pass.xaml.cs">
       <DependentUpon>Edit_pass.xaml</DependentUpon>
     </Compile>
@@ -122,6 +128,9 @@
     </Compile>
     <Compile Include="First_model.cs" />
     <Compile Include="Hash.cs" />
+    <Compile Include="Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
     <Compile Include="labelpass.xaml.cs">
       <DependentUpon>labelpass.xaml</DependentUpon>
     </Compile>
@@ -136,6 +145,9 @@
     <Compile Include="Password_res.xaml.cs">
       <DependentUpon>Password_res.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Question.xaml.cs">
+      <DependentUpon>Question.xaml</DependentUpon>
+    </Compile>
     <Compile Include="QuValidation.cs" />
     <Compile Include="register.xaml.cs">
       <DependentUpon>register.xaml</DependentUpon>
@@ -146,9 +158,6 @@
     <Compile Include="Resource_info.cs" />
     <Compile Include="Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Style.xaml.cs">
-      <DependentUpon>Style.xaml</DependentUpon>
     </Compile>
     <Compile Include="ThemeMenagerHelper.cs" />
     <Compile Include="User_info.cs" />
@@ -164,11 +173,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Delete_User.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Del_pass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Edit_pass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ed_pass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Help.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -203,6 +224,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Question.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="register.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -212,10 +237,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Setting.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -289,7 +310,28 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CustomAccents\" />
+    <None Include="Resources\1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del_acc.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete..JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_pass.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newuser.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\style.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edithelp.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

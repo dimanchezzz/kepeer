@@ -14,25 +14,16 @@
                       WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         x:Name="main_user"
-        Title="main_user_window" Height="600" Width="814">
-    <Controls:MetroWindow.RightWindowCommands>
-        <Controls:WindowCommands>
-            <Button Click="Button_Click_1">
-                <StackPanel Orientation="Horizontal">
-                    <!--<iconPacks:PackIconModern Width="24" Height="24" Kind="Cupcake" />-->
-                    <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="Change App Style..." />
-                </StackPanel>
-            </Button>
-        </Controls:WindowCommands>
-    </Controls:MetroWindow.RightWindowCommands>
+        Title="Account Kepeer" MinHeight="600" Height="600" Width="814" MinWidth="814">
+
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Width="60">
+        <StackPanel HorizontalAlignment="Left" Width="75">
             <Menu Margin="0,0,-15,0" >
                 <MenuItem  Header="     My &#xa;Password" Click="MenuItem_Click_2" Margin="0,20,0,20"  >
 
                 </MenuItem>
                 <MenuItem Header="New" Margin="11,20,0,20" Click="MenuItem_Click"  HorizontalAlignment="Center"/>
-                <MenuItem Header="Help" Margin="11,20,0,20"/>
+                <MenuItem Header="Help" Margin="11,20,0,20" Click="MenuItem_Click_4"/>
                 <MenuItem Header="Setting" Margin="11,20,0,20" Click="MenuItem_Click_3"/>
 
                 <MenuItem Header="Exit" Margin="11,20,0,20" Click="MenuItem_Click_1">
@@ -41,8 +32,8 @@
             </Menu>
 
         </StackPanel>
-        <Frame x:Name="User" Margin="80,35,0,0" NavigationUIVisibility="Hidden" HorizontalAlignment="Left" Height="534" Width="726"  />
-        <Label Name="date" Margin="602,-5,0,519" FontSize="25" MouseMove="Mouse_move"  FontFamily="Italic" MouseLeave="leave" MouseDown="clack"/>
+        <Frame x:Name="User" Margin="80,35,0,0" NavigationUIVisibility="Hidden" MinHeight="534" MinWidth="726"  />
+        <Label Name="date"    MinHeight="30" Height="35"   FontSize="25" HorizontalAlignment="Right" MouseMove="Mouse_move"  FontFamily="Italic" MouseLeave="leave" MouseDown="clack" Margin="0,0,6,0" Width="305" VerticalAlignment="Top" />
 
 
     </Grid>

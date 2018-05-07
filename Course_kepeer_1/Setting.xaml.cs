@@ -27,15 +27,12 @@ namespace Course_kepeer_1
         {
             InitializeComponent();
         }
-      
+        public delegate void style();
+        public static event style onstyleclick;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            my_passframe.Content = new Style(border1);
-            DoubleAnimation an = new DoubleAnimation();
-            an.To = 300;
-            an.Duration = TimeSpan.FromSeconds(0.3);
-            border1.BeginAnimation(Border.WidthProperty, an);
+            onstyleclick();
 
 
 
@@ -50,6 +47,12 @@ namespace Course_kepeer_1
             border1.BeginAnimation(Border.WidthProperty, an);
 
 
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Delete_User del = new Delete_User();
+                del.Show();
         }
     }
 }

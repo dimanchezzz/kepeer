@@ -7,14 +7,14 @@
       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       
       mc:Ignorable="d" 
-      d:DesignHeight="550" d:DesignWidth="300"
+      MinHeight="550" MinWidth="300"
       Title="auto" KeyDown="Enter">
     <!--<xctk:WatermarkTextBox Watermark="Enter First Name" />-->
-   
-        <Grid>
-        <TextBlock Text="Authorization" FontSize="30" TextAlignment="Center"  Margin="0,10,0,0"  Width="300" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center"/>
 
-        <xctk:WatermarkTextBox   Width="270"  PreviewKeyDown="auto_log_PreviewKeyDown"  Name="auto_log" BorderThickness="0.5" BorderBrush="Black" Margin="0,120,0,0" Background="Transparent" Height="35 "  VerticalAlignment="Top" FontSize="20"  TextAlignment="Center">
+    <Grid>
+        <TextBlock Text="Authorization" FontSize="30" TextAlignment="Center"  Margin="0,10,0,0"  MinWidth="300" MinHeight="40" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+        <xctk:WatermarkTextBox   MinHeight="35" MaxWidth="400" MinWidth="220" MaxHeight="35 "  PreviewKeyDown="auto_log_PreviewKeyDown"  Name="auto_log" BorderThickness="0.5" BorderBrush="Black" Margin="40,120,40,0" Background="Transparent"   VerticalAlignment="Top" FontSize="20"  TextAlignment="Center">
             <xctk:WatermarkTextBox.Watermark>
                 <StackPanel  Orientation="Horizontal">
                     <Image Source="Resources/user.png" Stretch="Fill"></Image>
@@ -22,7 +22,7 @@
                 </StackPanel>
             </xctk:WatermarkTextBox.Watermark>
         </xctk:WatermarkTextBox>
-        <xctk:WatermarkPasswordBox PreviewKeyDown="auto_pass_PreviewKeyDown"  Name="auto_pass"  Width="270" Height="35 " BorderThickness="0.5" VerticalAlignment="Top" Background="Transparent" BorderBrush="Black" TextAlignment="Center" Margin="0,180,0,0" FontSize="20" ToolTip="Password" >
+        <xctk:WatermarkPasswordBox PreviewKeyDown="auto_pass_PreviewKeyDown"  Name="auto_pass"  MinHeight="35" MaxWidth="400" MinWidth="220" MaxHeight="35 " BorderThickness="0.5" VerticalAlignment="Top" Background="Transparent" BorderBrush="Black" TextAlignment="Center" Margin="40,180,40,0" FontSize="20" ToolTip="Password" >
             <xctk:WatermarkPasswordBox.Watermark>
                 <StackPanel  Orientation="Horizontal">
                     <Image Source="Resources/key.png" Stretch="Fill"></Image>
@@ -30,9 +30,9 @@
                 </StackPanel>
             </xctk:WatermarkPasswordBox.Watermark>
         </xctk:WatermarkPasswordBox>
-        <Button Height="30" Width="100" VerticalAlignment="Bottom" IsDefault="True" Margin="120,0,0,100" Name="autoris" Content="Authorization" Click="Button_Click" />
+        <Button MinHeight="30" MaxWidth="100" VerticalAlignment="Bottom" IsDefault="True" Margin="120,0,0,100" Name="autoris" Content="Authorization" Click="Button_Click" />
 
-        <Button Height="30" Width="100" VerticalAlignment="Bottom" Margin="0,0,120,100" Content="Password reset" Click="click_reset" />
-        
+        <Button MinHeight="30" MaxWidth="100" VerticalAlignment="Bottom" Margin="0,0,120,100" Content="Password reset" Click="click_reset" />
+
     </Grid>
 </Page>

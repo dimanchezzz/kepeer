@@ -54,8 +54,6 @@ D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Setting.g.cs
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Setting.baml
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Reset_main.g.cs
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Reset_main.baml
-D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Style.g.cs
-D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Style.baml
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\App.baml
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\bin\Debug\ControlzEx.dll
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\bin\Debug\MahApps.Metro.dll
@@ -68,3 +66,11 @@ D:\C#\Course\Course_kepeer_1\Course_kepeer_1\bin\Debug\ru\EntityFramework.SqlSer
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\AccentStyleWindow.baml
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\AccentStyleWindow.g.cs
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Course_kepeer_1.csprojResolveAssemblyReference.cache
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Question.g.cs
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Question.baml
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Delete_User.g.cs
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Delete_User.baml
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Del_pass.g.cs
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Del_pass.baml
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Help.g.cs
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Help.baml

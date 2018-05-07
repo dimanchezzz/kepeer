@@ -10,9 +10,9 @@ d:DesignHeight="534" d:DesignWidth="722"
       Title="Setting">
 
     <Grid>
-        <Button Height="50" Content="Reset Password" Width="120" Margin="70,70,532,414" Click="Button_Click_1"/>
-        <Button Height="50" Content="Style" Width="120" Margin="70,195,532,289" Click="Button_Click"/>
-         <Border Name="border1" BorderThickness="1" HorizontalAlignment="Right" Width="5" RenderTransformOrigin="0.5,0.5">
+        <Button Height="50" Content="Reset Password" Width="120" Margin="70,70,0,414" Click="Button_Click_1" HorizontalAlignment="Left"/>
+        <Button Height="50" Content="Style" Width="120" Margin="70,195,0,289" Click="Button_Click" HorizontalAlignment="Left"/>
+        <Border Name="border1" BorderThickness="1" HorizontalAlignment="Right" Width="5" RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1"/>
@@ -27,6 +27,7 @@ d:DesignHeight="534" d:DesignWidth="722"
                 </Frame>
             </Grid>
         </Border>
+        <Button Height="50" Content="Delete accaunt" Width="120" Margin="70,325,0,159" Click="Button_Click_2" HorizontalAlignment="Left"/>
 
 
     </Grid>

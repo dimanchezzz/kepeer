@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
+
 
 namespace Course_kepeer_1
 {
@@ -67,11 +69,17 @@ namespace Course_kepeer_1
         {
             try
             {
+                if (Regex.IsMatch(newe.Text, register.pattern))
+                {
+                    MessageBox.Show("Invalid password format");
+                    newe.Clear();
+                    return;
+                }
                 using (First_model db = new First_model())
                 {
                     IEnumerable<User_info> users = db.User_info.Where(u => u.Login.Equals(logcheck.Text));
                     User_info user = users.First();
-                    if (user.Answer.Equals(Ans.Text))
+                    if (user.Answer.Equals(Hash.GetHash(Ans.Text)))
                     {
                         user.Password = Hash.GetHash(newe.Text);
                         db.SaveChanges();
@@ -84,7 +92,7 @@ namespace Course_kepeer_1
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 MessageBox.Show("Incorrectly entered data");
                 logcheck.Clear();

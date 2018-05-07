@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
+using System.Text.RegularExpressions;
+
 
 namespace Course_kepeer_1
 {
@@ -70,35 +72,44 @@ namespace Course_kepeer_1
             }
             password.Text = pass;
         }
-     
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Coding cod = new Coding();
-            using (First_model db = new First_model())
+            if (Regex.IsMatch(password.Text, register.pattern))
             {
-                Resource_info rs = new Resource_info
-                {  
-                    
-                    Resource =Res.Text,
-                    Login_resource = Log_res.Text,
-                    Password_resource = cod.Encode(password.Text),
-                    User = main_user_window.Thisuser.Login,
-                    User_id=main_user_window.Thisuser.Id
-                    
-
-
-                };
-                db.Resource_info.Add(rs);
-                db.SaveChanges();
-                MessageBox.Show("ok");
-                Res.Clear();
-                Log_res.Clear();
+                MessageBox.Show("Invalid Password format");
                 password.Clear();
-                
+                return;
+            }
+            else
+            {
+                Coding cod = new Coding();
+                using (First_model db = new First_model())
+                {
+                    Resource_info rs = new Resource_info
+                    {
+
+                        Resource = Res.Text,
+                        Login_resource = Log_res.Text,
+                        Password_resource = cod.Encode(password.Text),
+                        User = main_user_window.Thisuser.Login,
+                        User_id = main_user_window.Thisuser.Id
+
+
+
+                    };
+                    db.Resource_info.Add(rs);
+                    db.SaveChanges();
+                    MessageBox.Show("ok");
+                    Res.Clear();
+                    Log_res.Clear();
+                    password.Clear();
+
+
+                }
 
             }
-
         }
 
         public void Isena()

@@ -48,7 +48,8 @@ namespace Course_kepeer_1
                     MessageBox.Show("bad login", "Error");
                     return;
                 }
-                User_info user = users.FirstOrDefault<User_info>();
+                User_info user = users.FirstOrDefault();
+                
                 if (user.Password.Equals(Hash.GetHash(auto_pass.Password)))
                 {
                     main_user_window man = new main_user_window(user);

@@ -21,7 +21,7 @@ namespace Course_kepeer_1
     public partial class Edit_pass : Page
     {
         Border Bord;
-        Resource_info Info;
+      public static  Resource_info Info;
         
         public Edit_pass(Border bord,Resource_info info)
         {
@@ -30,6 +30,7 @@ namespace Course_kepeer_1
             Info = info;
             passworch.Content = new labelpass(Info,Bord);
             isEnab += Isenab;
+          
 
            
         }
@@ -53,29 +54,35 @@ namespace Course_kepeer_1
         public delegate void MethodContainer();
         public static event MethodContainer onDeleteClick;
         public static event MethodContainer isEnab;
-         public void Isenab()
-        { if (Info==null)
+        public void Isenab()
+        {
+            if (Info==null)
             {
                 delete.IsEnabled = false;
                 edit.IsEnabled = false;
             }           
         }
+       
         private void delete_Click(object sender, RoutedEventArgs e)
-        {           
-            MessageBoxResult result = MessageBox.Show("Do you want to delete the entry?", "Question", MessageBoxButton.OKCancel, MessageBoxImage.Question);
-            if (result == MessageBoxResult.OK)
+        {
+            Del_pass dele = new Del_pass();
+            dele.Show();
+            
+
+
+        }
+        public static void delll()
+        {
+            using (First_model db = new First_model())
             {
-                using (First_model db = new First_model())
-                {
-                    IEnumerable<Resource_info> res = db.Resource_info.Where(u => u.Id.Equals(Info.Id));
-                    Resource_info reso = res.First();                  
-                    db.Resource_info.RemoveRange(res);
-                    db.SaveChanges();
-                    onDeleteClick();
-                    isEnab();
-                    return;
-                }
-            }                  
+                IEnumerable<Resource_info> res = db.Resource_info.Where(u => u.Id.Equals(Info.Id));
+                Resource_info reso = res.First();
+                db.Resource_info.RemoveRange(res);
+                db.SaveChanges();
+                onDeleteClick();
+                isEnab();
+                return;
+            }
         }
     }
 }

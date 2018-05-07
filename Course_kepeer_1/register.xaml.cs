@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace Course_kepeer_1
 {
@@ -22,16 +23,13 @@ namespace Course_kepeer_1
     
     public partial class register : Page, INotifyPropertyChanged
     {
+        public static string pattern = @"[^0-9a-zA-Z]+";
         public register()
         {
             InitializeComponent();
             DataContext = this;
            
-        }
-        public delegate void CheckForm();
-        public static event CheckForm OnEnable;
-
-
+        }     
         private void Click_agreement(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("hi");
@@ -61,10 +59,26 @@ namespace Course_kepeer_1
             else if (pw1.Password!=pw2.Password)
             {
                 MessageBox.Show("Passwords do not match!");
+                pw1.Clear();
+                pw2.Clear();
                 return;
             }
+            
+            else if (Regex.IsMatch(log.Text, pattern))
+            {
+                MessageBox.Show("Invalid login format");
+                log.Clear();
+                return;
 
+            }
+            else if (Regex.IsMatch(pw1.Password, pattern))
+            {
+                MessageBox.Show("Invalid password format");
+                pw1.Clear();
+                pw2.Clear();
+                return;
 
+            }
             using (First_model db = new First_model())
             {
                 IEnumerable<User_info> users = db.User_info.Where(u => u.Login.Equals(log.Text));
@@ -75,25 +89,25 @@ namespace Course_kepeer_1
                 }
                 else
                     try
+                    
                     {
-
-                        User_info User1 = new User_info
+                    User_info User1 = new User_info
                     {
 
                         Login = log.Text,
                         Password = Hash.GetHash(pw1.Password),
                         Question = qu.Text,
-                        Answer = ans.Text
+                        Answer = Hash.GetHash(ans.Text)
                     };
                     db.User_info.Add(User1);
                     db.SaveChanges();
-                
-            }
-                catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            MessageBox.Show("ok","Message");
+                    MessageBox.Show("ok", "Message");
+                    
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Incorrectly filled data");
+                }
             }
         }
         private void check_Checked(object sender, RoutedEventArgs e)
@@ -103,9 +117,7 @@ namespace Course_kepeer_1
                 registers.IsEnabled = true;
                 return;
             }
-
         }
-
         private void check_Unchecked(object sender, RoutedEventArgs e)
         {
             if (check.IsChecked == false)
@@ -113,9 +125,7 @@ namespace Course_kepeer_1
                 registers.IsEnabled = false;
                 return;
             }
-
         }
-
         private void log_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Space)
@@ -126,9 +136,7 @@ namespace Course_kepeer_1
             {
                 e.Handled = true;
             }
-
         }
-
         private void pw1_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Space)
@@ -139,7 +147,6 @@ namespace Course_kepeer_1
             {
                 e.Handled = true;
             }
-
         }
     }
 }

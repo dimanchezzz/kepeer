@@ -11,7 +11,7 @@ namespace Course_kepeer_1
 {
     public class LoginValidator : ValidationRule
     {
-       // private string _regex = @"/w";
+      
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
         {
 

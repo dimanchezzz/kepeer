@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
+
 
 namespace Course_kepeer_1
 {
@@ -48,9 +50,16 @@ namespace Course_kepeer_1
             }
         }
 
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            using (First_model db = new First_model())
+            if (Regex.IsMatch(pass.Text, register.pattern))
+            {
+                MessageBox.Show("Invalid password format");
+                pass.Clear();
+                return;
+            }
+          using (First_model db = new First_model())
             {
                 Coding cod = new Coding();
                 IEnumerable<Resource_info> res = db.Resource_info.Where(u => u.Id.Equals(info.Id));
@@ -59,14 +68,12 @@ namespace Course_kepeer_1
                 reso.Login_resource = log.Text;
                 reso.Password_resource = cod.Encode(pass.Text);
                 db.SaveChanges();
+                MessageBox.Show("Ok");
                 return;
 
 
-            }
-            
-
+            }           
         }
-
         private void resou_SelectionChanged(object sender, RoutedEventArgs e)
         {
             isEnable();

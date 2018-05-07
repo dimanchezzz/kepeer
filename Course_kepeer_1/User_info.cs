@@ -17,7 +17,7 @@ namespace Course_kepeer_1
         public int Id { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(100)]
         public string Login { get; set; }
 
         [Required]
@@ -25,11 +25,11 @@ namespace Course_kepeer_1
         public string Password { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(100)]
         public string Answer { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(100)]
         public string Question { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
