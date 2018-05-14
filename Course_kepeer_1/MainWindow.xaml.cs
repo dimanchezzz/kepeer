@@ -25,8 +25,13 @@ namespace Course_kepeer_1
         {
             InitializeComponent();
             Main.Content = new first();
+            register.onregClick += Au;
         }
         private void btn_click_auto(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new auto(first_window);
+        }
+        public void Au()
         {
             Main.Content = new auto(first_window);
         }

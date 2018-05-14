@@ -24,12 +24,12 @@
                 </MenuItem>
                 <MenuItem Header="New" Margin="11,20,0,20" Click="MenuItem_Click"  HorizontalAlignment="Center"/>
                 <MenuItem Header="Help" Margin="11,20,0,20" Click="MenuItem_Click_4"/>
-                <MenuItem Header="Setting" Margin="11,20,0,20" Click="MenuItem_Click_3"/>
+                <MenuItem Header="Settings" Margin="11,20,0,20" Click="MenuItem_Click_3"/>
                 <MenuItem Header="Exit" Margin="11,20,0,20" Click="MenuItem_Click_1">
                 </MenuItem>
             </Menu>
         </StackPanel>
         <Frame x:Name="User" Margin="80,35,0,0" NavigationUIVisibility="Hidden" MinHeight="534" MinWidth="726"  />
-        <Label Name="date"    MinHeight="30" Height="35"   FontSize="25" HorizontalAlignment="Right" MouseMove="Mouse_move"  FontFamily="Italic" MouseLeave="leave" MouseDown="clack" Margin="0,0,6,0" Width="305" VerticalAlignment="Top" />
+        <Label Name="date"    MinHeight="30" Height="35"   FontSize="20" HorizontalAlignment="Right" MouseMove="Mouse_move"  FontFamily="Italic" MouseLeave="leave" MouseDown="clack" Margin="0,0,6,0" Width="305" VerticalAlignment="Top" />
     </Grid>
 </Controls:MetroWindow>

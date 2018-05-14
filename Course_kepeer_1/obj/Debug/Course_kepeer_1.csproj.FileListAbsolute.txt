@@ -78,3 +78,5 @@ D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\first.g.cs
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\first.baml
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Change_pass.g.cs
 D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Change_pass.baml
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Agree.g.cs
+D:\C#\Course\Course_kepeer_1\Course_kepeer_1\obj\Debug\Agree.baml

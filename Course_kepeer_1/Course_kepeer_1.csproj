@@ -112,6 +112,9 @@
     <Compile Include="Add_pass.xaml.cs">
       <DependentUpon>Add_pass.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Agree.xaml.cs">
+      <DependentUpon>Agree.xaml</DependentUpon>
+    </Compile>
     <Compile Include="answerValid.cs" />
     <Compile Include="Change_pass.xaml.cs">
       <DependentUpon>Change_pass.xaml</DependentUpon>
@@ -177,6 +180,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Add_pass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Agree.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -273,6 +280,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

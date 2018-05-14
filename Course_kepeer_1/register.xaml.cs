@@ -26,7 +26,7 @@ namespace Course_kepeer_1
     
     public partial class register : Page, INotifyPropertyChanged
     {
-        public static string pattern = @"[^0-9a-zA-Z]+";
+        public static string pattern = @"[^0-9a-zA-Z_-]+";
         public register()
         {
             InitializeComponent();
@@ -34,7 +34,9 @@ namespace Course_kepeer_1
         }     
         private void Click_agreement(object sender, MouseButtonEventArgs e)
         {
-            Process.Start("agree.txt");
+            Agree ag = new Agree();
+            ag.Show();
+            
         }
         private void TextBlock_MouseMove(object sender, MouseEventArgs e)
         {
@@ -49,6 +51,8 @@ namespace Course_kepeer_1
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
+        public delegate void MethodContainer();
+        public static event MethodContainer onregClick;
         private void registers_Click(object sender, RoutedEventArgs e)
         {
             if (Validation.GetHasError(log) == true || Validation.GetHasError(pw1) || Validation.GetHasError(pw2) || Validation.GetHasError(qu) || Validation.GetHasError(ans))
@@ -96,7 +100,8 @@ namespace Course_kepeer_1
                     };
                     db.User_info.Add(User1);
                     db.SaveChanges();
-                    MessageBox.Show("ok", "Message");                    
+                    MessageBox.Show("ok", "Message");
+                        onregClick();                  
                 }
                 catch (Exception)
                 {

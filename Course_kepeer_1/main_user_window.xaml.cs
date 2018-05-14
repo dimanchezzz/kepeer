@@ -26,11 +26,13 @@ namespace Course_kepeer_1
         public main_user_window(User_info user)
         {      
             InitializeComponent();
+            User.Content = new Help();
             Thisuser = user;
             date.Content = Thisuser.Login;
             Setting.onstyleclick += Stylce;
             Question.onNewUser += Closedf;
             Delete_User.onNewUser += Closedf;
+
         }
         public static User_info Thisuser
         {
